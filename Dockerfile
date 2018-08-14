@@ -1,9 +1,9 @@
-FROM gcc:7.3.0
-# FROM arm64=arm64v8/gcc:7.3.0
+FROM debian:stable-slim
 
 RUN apt-get update \
     && apt-get install -yq --no-install-recommends \
-        libssl-dev libmount-dev \
+        build-essential \
+	libssl-dev libmount-dev \
         kmod \
         parted lsscsi ksh curl git \
     && rm -rf /var/lib/apt/lists/*
